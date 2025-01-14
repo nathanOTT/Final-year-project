@@ -37,7 +37,7 @@ def update_player_stat(db: Session, stat_id: int, speed: float = None, distance:
     db.refresh(stat)
     return stat
 
-#Delting player stat
+#Deleting player stat
 def delete_player_stat(db: Session, stat_id: int):
     """
     Delete a specific stat record by ID.

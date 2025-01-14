@@ -2,19 +2,15 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# Define the database URL
+# Database URL
 DATABASE_URL = "sqlite:///./football_fitbit.db"
 
-# Create the database engine
+# Initialize SQLAlchemy components
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
-
-# Create a SessionLocal class for managing sessions
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-# Base class for models
 Base = declarative_base()
 
-# Dependency to get a database session
+# Dependency for database session
 def get_db():
     db = SessionLocal()
     try:
