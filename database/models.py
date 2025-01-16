@@ -12,3 +12,4 @@ class PlayerStat(Base):
     speed = Column(Float)
     distance = Column(Float)
     timestamp = Column(DateTime)
+    total_points = Column(Integer, default=0)  # Added total_points to store player points
